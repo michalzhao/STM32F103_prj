@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\list\\" -I.\FWlib\inc -I.\user -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o ".\obj\main.o" --list_dir ".\\list\\" --list --omf_browse ".\obj\main.crf" --depend ".\obj\main.d" "user\main.c"
