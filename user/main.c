@@ -283,6 +283,7 @@ void assert_failed(u8* file, u32 line)
   /* Infinite loop */
   while (1)
   {
+		printf("Wrong parameters value: file %s on line %d\r\n", file, line);
   }
 }
 #endif
@@ -312,22 +313,21 @@ void USART_Configuration1(void)
                          the SCLK pin
   */
   USART_ClockInitStructure.USART_Clock = USART_Clock_Disable;
-USART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
-USART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
-USART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
-/* Configure the USART1 synchronous paramters */
-USART_ClockInit(USART1, &USART_ClockInitStructure);
+  USART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
+  USART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
+  USART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
+  /* Configure the USART1 synchronous paramters */
+  USART_ClockInit(USART1, &USART_ClockInitStructure);
 
-USART_InitStructure.USART_BaudRate = 115200;
-USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-USART_InitStructure.USART_StopBits = USART_StopBits_1;
-USART_InitStructure.USART_Parity = USART_Parity_No ;
-USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+  USART_InitStructure.USART_BaudRate = 115200;
+  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+  USART_InitStructure.USART_StopBits = USART_StopBits_1;
+  USART_InitStructure.USART_Parity = USART_Parity_No ;
+  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 
-
-USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-/* Configure USART1 basic and asynchronous paramters */
-USART_Init(USART1, &USART_InitStructure);
+  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+  /* Configure USART1 basic and asynchronous paramters */
+  USART_Init(USART1, &USART_InitStructure);
   /* Enable USART1 */
   USART_Cmd(USART1, ENABLE);
 }

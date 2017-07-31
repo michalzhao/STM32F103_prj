@@ -8356,7 +8356,7 @@ void NVIC_Configuration(void)
 
 }
 
-#line 289 "user\\main.c"
+#line 290 "user\\main.c"
 
 
 
@@ -8383,22 +8383,21 @@ void USART_Configuration1(void)
 
  
   USART_ClockInitStructure.USART_Clock = ((uint16_t)0x0000);
-USART_ClockInitStructure.USART_CPOL = ((uint16_t)0x0000);
-USART_ClockInitStructure.USART_CPHA = ((uint16_t)0x0200);
-USART_ClockInitStructure.USART_LastBit = ((uint16_t)0x0000);
- 
-USART_ClockInit(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_ClockInitStructure);
+  USART_ClockInitStructure.USART_CPOL = ((uint16_t)0x0000);
+  USART_ClockInitStructure.USART_CPHA = ((uint16_t)0x0200);
+  USART_ClockInitStructure.USART_LastBit = ((uint16_t)0x0000);
+   
+  USART_ClockInit(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_ClockInitStructure);
 
-USART_InitStructure.USART_BaudRate = 115200;
-USART_InitStructure.USART_WordLength = ((uint16_t)0x0000);
-USART_InitStructure.USART_StopBits = ((uint16_t)0x0000);
-USART_InitStructure.USART_Parity = ((uint16_t)0x0000) ;
-USART_InitStructure.USART_HardwareFlowControl = ((uint16_t)0x0000);
+  USART_InitStructure.USART_BaudRate = 115200;
+  USART_InitStructure.USART_WordLength = ((uint16_t)0x0000);
+  USART_InitStructure.USART_StopBits = ((uint16_t)0x0000);
+  USART_InitStructure.USART_Parity = ((uint16_t)0x0000) ;
+  USART_InitStructure.USART_HardwareFlowControl = ((uint16_t)0x0000);
 
-
-USART_InitStructure.USART_Mode = ((uint16_t)0x0004) | ((uint16_t)0x0008);
- 
-USART_Init(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_InitStructure);
+  USART_InitStructure.USART_Mode = ((uint16_t)0x0004) | ((uint16_t)0x0008);
+   
+  USART_Init(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_InitStructure);
    
   USART_Cmd(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), ENABLE);
 }

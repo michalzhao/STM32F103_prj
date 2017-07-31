@@ -205,62 +205,61 @@
                           AREA ||i.USART_Configuration1||, CODE, READONLY, ALIGN=2
 
                   USART_Configuration1 PROC
-;;;295    *******************************************************************************/
-;;;296    void USART_Configuration1(void)
+;;;296    *******************************************************************************/
+;;;297    void USART_Configuration1(void)
 000000  b530              PUSH     {r4,r5,lr}
-;;;297    {
+;;;298    {
 000002  b087              SUB      sp,sp,#0x1c
-;;;298      USART_InitTypeDef USART_InitStructure;
-;;;299      USART_ClockInitTypeDef  USART_ClockInitStructure;
-;;;300    /* USART1 configuration ------------------------------------------------------*/
-;;;301      /* USART1 configured as follow:
-;;;302            - BaudRate = 115200 baud  
-;;;303            - Word Length = 8 Bits
-;;;304            - One Stop Bit
-;;;305            - No parity
-;;;306            - Hardware flow control disabled (RTS and CTS signals)
-;;;307            - Receive and transmit enabled
-;;;308            - USART Clock disabled
-;;;309            - USART CPOL: Clock is active low
-;;;310            - USART CPHA: Data is captured on the middle 
-;;;311            - USART LastBit: The clock pulse of the last data bit is not output to 
-;;;312                             the SCLK pin
-;;;313      */
-;;;314      USART_ClockInitStructure.USART_Clock = USART_Clock_Disable;
+;;;299      USART_InitTypeDef USART_InitStructure;
+;;;300      USART_ClockInitTypeDef  USART_ClockInitStructure;
+;;;301    /* USART1 configuration ------------------------------------------------------*/
+;;;302      /* USART1 configured as follow:
+;;;303            - BaudRate = 115200 baud  
+;;;304            - Word Length = 8 Bits
+;;;305            - One Stop Bit
+;;;306            - No parity
+;;;307            - Hardware flow control disabled (RTS and CTS signals)
+;;;308            - Receive and transmit enabled
+;;;309            - USART Clock disabled
+;;;310            - USART CPOL: Clock is active low
+;;;311            - USART CPHA: Data is captured on the middle 
+;;;312            - USART LastBit: The clock pulse of the last data bit is not output to 
+;;;313                             the SCLK pin
+;;;314      */
+;;;315      USART_ClockInitStructure.USART_Clock = USART_Clock_Disable;
 000004  2400              MOVS     r4,#0
-;;;315    USART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
-;;;316    USART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
+;;;316      USART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
+;;;317      USART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
 000006  f44f7000          MOV      r0,#0x200
 00000a  f8ad0014          STRH     r0,[sp,#0x14]
-;;;317    USART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
-;;;318    /* Configure the USART1 synchronous paramters */
-;;;319    USART_ClockInit(USART1, &USART_ClockInitStructure);
+;;;318      USART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
+;;;319      /* Configure the USART1 synchronous paramters */
+;;;320      USART_ClockInit(USART1, &USART_ClockInitStructure);
 00000e  4d11              LDR      r5,|L4.84|
-000010  f8ad4010          STRH     r4,[sp,#0x10]         ;314
-000014  f8ad4012          STRH     r4,[sp,#0x12]         ;315
-000018  f8ad4016          STRH     r4,[sp,#0x16]         ;317
+000010  f8ad4010          STRH     r4,[sp,#0x10]         ;315
+000014  f8ad4012          STRH     r4,[sp,#0x12]         ;316
+000018  f8ad4016          STRH     r4,[sp,#0x16]         ;318
 00001c  a904              ADD      r1,sp,#0x10
 00001e  4628              MOV      r0,r5
 000020  f7fffffe          BL       USART_ClockInit
-;;;320    
-;;;321    USART_InitStructure.USART_BaudRate = 115200;
+;;;321    
+;;;322      USART_InitStructure.USART_BaudRate = 115200;
 000024  f44f30e1          MOV      r0,#0x1c200
-;;;322    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+;;;323      USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 000028  9000              STR      r0,[sp,#0]
-;;;323    USART_InitStructure.USART_StopBits = USART_StopBits_1;
-;;;324    USART_InitStructure.USART_Parity = USART_Parity_No ;
+;;;324      USART_InitStructure.USART_StopBits = USART_StopBits_1;
+;;;325      USART_InitStructure.USART_Parity = USART_Parity_No ;
 00002a  f8ad4008          STRH     r4,[sp,#8]
-;;;325    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-;;;326    
+;;;326      USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 ;;;327    
-;;;328    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+;;;328      USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 00002e  200c              MOVS     r0,#0xc
-000030  f8ad4004          STRH     r4,[sp,#4]            ;322
+000030  f8ad4004          STRH     r4,[sp,#4]            ;323
 000034  f8ad000a          STRH     r0,[sp,#0xa]
-000038  f8ad4006          STRH     r4,[sp,#6]            ;323
-00003c  f8ad400c          STRH     r4,[sp,#0xc]          ;325
-;;;329    /* Configure USART1 basic and asynchronous paramters */
-;;;330    USART_Init(USART1, &USART_InitStructure);
+000038  f8ad4006          STRH     r4,[sp,#6]            ;324
+00003c  f8ad400c          STRH     r4,[sp,#0xc]          ;326
+;;;329      /* Configure USART1 basic and asynchronous paramters */
+;;;330      USART_Init(USART1, &USART_InitStructure);
 000040  4669              MOV      r1,sp
 000042  4628              MOV      r0,r5
 000044  f7fffffe          BL       USART_Init

@@ -1,6 +1,6 @@
 Dependencies for Project 'STM32-FD-ADC', Target 'STM32-FD-ADC': (DO NOT MODIFY !)
 F (.\startup\startup_stm32f10x_hd.s)(0x49D9BDA8)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x --list ".\list\startup_stm32f10x_hd.lst" --xref -o ".\obj\startup_stm32f10x_hd.o" --depend ".\obj\startup_stm32f10x_hd.d")
-F (.\user\main.c)(0x594848A3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\list\\" -I.\FWlib\inc -I.\user -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o ".\obj\main.o" --list_dir ".\\list\\" --list --omf_browse ".\obj\main.crf" --depend ".\obj\main.d")
+F (.\user\main.c)(0x596DA6B7)(-c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\list\\" -I.\FWlib\inc -I.\user -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o ".\obj\main.o" --list_dir ".\\list\\" --list --omf_browse ".\obj\main.crf" --depend ".\obj\main.d")
 I (user\stm32f10x.h)(0x4B1E0970)
 I (user\core_cm3.h)(0x4DFC9204)
 I (C:\Keil\ARM\RV31\Inc\stdint.h)(0x4F58A5FC)

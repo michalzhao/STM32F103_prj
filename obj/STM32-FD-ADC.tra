@@ -19,7 +19,7 @@
 ### ADS-LD Output File: '.\obj\STM32-FD-ADC.axf'
 ### ADS-LD Command File: '.\obj\STM32-FD-ADC.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\obj\STM32-FD-ADC.lnp', Handle=0x0000038C
+### Creating CmdFile '.\obj\STM32-FD-ADC.lnp', Handle=0x0000040C
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\obj\STM32-FD-ADC.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

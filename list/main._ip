@@ -1,1 +1,0 @@
-"user\main.c" -E -c --cpu Cortex-M3 -D__MICROLIB -O3 --apcs=interwork --split_sections -I.\FWlib\inc -I.\user -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -o ".\list\main.i" --list_dir ".\\list\\" --list

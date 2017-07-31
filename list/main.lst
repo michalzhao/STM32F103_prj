@@ -20035,6 +20035,7 @@ S
 S  /* Infinite loop */
 S  while (1)
 S  {
+S		printf("Wrong parameters value: file %s on line %d\r\n", file, line);
 S  }
 S}
 N#endif
@@ -20065,32 +20066,31 @@ N                         the SCLK pin
 N  */
 N  USART_ClockInitStructure.USART_Clock = USART_Clock_Disable;
 X  USART_ClockInitStructure.USART_Clock = ((uint16_t)0x0000);
-NUSART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
-XUSART_ClockInitStructure.USART_CPOL = ((uint16_t)0x0000);
-NUSART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
-XUSART_ClockInitStructure.USART_CPHA = ((uint16_t)0x0200);
-NUSART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
-XUSART_ClockInitStructure.USART_LastBit = ((uint16_t)0x0000);
-N/* Configure the USART1 synchronous paramters */
-NUSART_ClockInit(USART1, &USART_ClockInitStructure);
-XUSART_ClockInit(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_ClockInitStructure);
+N  USART_ClockInitStructure.USART_CPOL = USART_CPOL_Low;
+X  USART_ClockInitStructure.USART_CPOL = ((uint16_t)0x0000);
+N  USART_ClockInitStructure.USART_CPHA = USART_CPHA_2Edge;
+X  USART_ClockInitStructure.USART_CPHA = ((uint16_t)0x0200);
+N  USART_ClockInitStructure.USART_LastBit = USART_LastBit_Disable;
+X  USART_ClockInitStructure.USART_LastBit = ((uint16_t)0x0000);
+N  /* Configure the USART1 synchronous paramters */
+N  USART_ClockInit(USART1, &USART_ClockInitStructure);
+X  USART_ClockInit(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_ClockInitStructure);
 N
-NUSART_InitStructure.USART_BaudRate = 115200;
-NUSART_InitStructure.USART_WordLength = USART_WordLength_8b;
-XUSART_InitStructure.USART_WordLength = ((uint16_t)0x0000);
-NUSART_InitStructure.USART_StopBits = USART_StopBits_1;
-XUSART_InitStructure.USART_StopBits = ((uint16_t)0x0000);
-NUSART_InitStructure.USART_Parity = USART_Parity_No ;
-XUSART_InitStructure.USART_Parity = ((uint16_t)0x0000) ;
-NUSART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-XUSART_InitStructure.USART_HardwareFlowControl = ((uint16_t)0x0000);
+N  USART_InitStructure.USART_BaudRate = 115200;
+N  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+X  USART_InitStructure.USART_WordLength = ((uint16_t)0x0000);
+N  USART_InitStructure.USART_StopBits = USART_StopBits_1;
+X  USART_InitStructure.USART_StopBits = ((uint16_t)0x0000);
+N  USART_InitStructure.USART_Parity = USART_Parity_No ;
+X  USART_InitStructure.USART_Parity = ((uint16_t)0x0000) ;
+N  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+X  USART_InitStructure.USART_HardwareFlowControl = ((uint16_t)0x0000);
 N
-N
-NUSART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-XUSART_InitStructure.USART_Mode = ((uint16_t)0x0004) | ((uint16_t)0x0008);
-N/* Configure USART1 basic and asynchronous paramters */
-NUSART_Init(USART1, &USART_InitStructure);
-XUSART_Init(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_InitStructure);
+N  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+X  USART_InitStructure.USART_Mode = ((uint16_t)0x0004) | ((uint16_t)0x0008);
+N  /* Configure USART1 basic and asynchronous paramters */
+N  USART_Init(USART1, &USART_InitStructure);
+X  USART_Init(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), &USART_InitStructure);
 N  /* Enable USART1 */
 N  USART_Cmd(USART1, ENABLE);
 X  USART_Cmd(((USART_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x3800)), ENABLE);
